@@ -5,7 +5,7 @@ export default function Product() {
     return (
         <div className="product">
             <div className="product_info">
-                <p>Title</p>
+                <p>Designer bag made straight from Bonn. Quality at its best</p>
                 <p className="product_price">$30</p>
                 <small></small>
                 <div className="product_rating"></div>
