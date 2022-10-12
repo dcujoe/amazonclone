@@ -1,12 +1,29 @@
 import React from 'react';
 import Header from './Header';
+import CheckoutProduct from './CheckoutProduct';
+import Subtotal from './Subtotal';
 import './Checkout.css';
 
 const Checkout = () => {
     return (
         <div>
             <Header />
-            <h1>Hello world</h1>
+            <div className="checkout">
+                <div className="checkout-left">
+                    <img src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg" 
+                    alt="" className="checkout-add" />
+
+                    <h2 className="checkout-title">
+                        Your Shopping Basket
+                    </h2>
+                    <CheckoutProduct />
+                </div>
+
+                <div className="checkout-right">
+                    {/* react currency package from npm*/}
+                    <Subtotal />
+                </div>
+            </div>
         </div>
     );
 }
