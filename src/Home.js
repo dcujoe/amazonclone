@@ -1,10 +1,12 @@
 import React from 'react';
 import Product from './Product'
+import Header from './Header';
 import './Home.css';
 
 export default function Home() {
     return (
         <div>
+            <Header />
             <div className="home">
                 <div className="home_container">
                     <img src="https://www.x-cart.com/wp-content/uploads/2019/01/ecommerce-768x278.jpg" alt="homeImage" className="home_image" />
@@ -14,7 +16,7 @@ export default function Home() {
                         id="4365"
                         title="the blue bag with nice designs"
                         price={11.96}
-                        rating={5}
+                        rating={4}
                         image="https://images-na.ssl-images-amazon.com/images/I/81D8pNFmWzL._SL1500_.jpg"
                         />
                         <Product 
