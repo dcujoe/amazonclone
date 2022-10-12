@@ -19,7 +19,7 @@ const Checkout = () => {
                     <CheckoutProduct />
                     <CheckoutProduct />
                     <CheckoutProduct />
-                    <CheckoutProduct />
+                    
                 </div>
 
                 <div className="checkout-right">
