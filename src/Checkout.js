@@ -17,11 +17,13 @@ const Checkout = () => {
                         Your Shopping Basket
                     </h2>
                     <CheckoutProduct />
+                    <CheckoutProduct />
+                    <CheckoutProduct />
+                    <CheckoutProduct />
                 </div>
 
                 <div className="checkout-right">
-                    {/* react currency package from npm*/}
-                    <Subtotal />
+                  <Subtotal />
                 </div>
             </div>
         </div>

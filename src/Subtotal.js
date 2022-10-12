@@ -17,7 +17,14 @@ const Subtotal = () => {
                 </small>
                 </>
             )}
+
+            decimalScale={2}
+            value={0}
+            displayType={"text"}
+            thousandsSeparator={true}
+            
             />
+            <button>Proceed to Checkout</button>
         </div>
     );
 }
