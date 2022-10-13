@@ -3,7 +3,7 @@ import Product from './Product'
 import Header from './Header';
 import './Home.css';
 
-export default function Home() {
+const Home = () => {
     return (
         <div>
             <Header />
@@ -63,5 +63,4 @@ export default function Home() {
     );
 }
 
-
-
+export default Home;

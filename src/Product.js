@@ -6,7 +6,7 @@ import { useStateValue } from './StateProvider';
 
 
 
-export default function Product({id, title, image, price, rating}) {
+const Product = ({id, title, image, price, rating}) => {
     // state is the initial state, dispatch is the action that has to be done
     // The dispatch is a javascript object that performs an action
     const [state, dispatch] = useStateValue();
@@ -41,4 +41,4 @@ export default function Product({id, title, image, price, rating}) {
     );
 }
 
-
+export default Product;

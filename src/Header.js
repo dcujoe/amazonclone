@@ -6,7 +6,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
 import { useStateValue } from './StateProvider';
 
-export default function Header() {
+const Header = () => {
   // basket contains product details
 
   const [{basket}, dispatch] = useStateValue();
@@ -48,4 +48,4 @@ export default function Header() {
     );
 }
 
-
+export default Header;
