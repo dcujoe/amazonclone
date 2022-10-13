@@ -4,8 +4,16 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
+import { useStateValue } from './StateProvider';
 
 export default function Header() {
+  // basket contains product details
+
+  const [{basket}, dispatch] = useStateValue();
+  // to see the number of items in the basket, use basket.length into the basket section of the
+  //header
+
+
     return (
         <div className="header">
           <Link to="/" style={{ textDecoration: "none" }}>
@@ -32,7 +40,7 @@ export default function Header() {
         <Link to="/Checkout" style={{ textDecoration: "none" }}>
         <div className="nav-itemBasket">
         <ShoppingBasketIcon fontSize="large" />
-        <span className="nav_itemLinetwo nav_itemBasketcount">0</span>
+        <span className="nav_itemLinetwo nav_itemBasketcount">{basket.length}</span>
         </div>
         </Link>
       </div>
