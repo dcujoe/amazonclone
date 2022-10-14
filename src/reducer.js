@@ -3,15 +3,12 @@
 
 export const initialState = {
     basket: [],
-}
+};
 
 
-
-
-
-// Selector to select the state and make an action to the state provider
+// selector function
 export const getBasketTotal = (basket) => {
-    return (basket?.reduce((amount, item) => item.price + amount, 0));
+    return(basket.reduce((amount, item) => item.price + amount, 0));
 }
 
 
@@ -25,7 +22,7 @@ const reducer = (state, action) => {
             // returns the initial state indicated by ...state
             ...state,
             // adds to the initial state, the basket and action.item
-            basket: [...state.basket, ...state.action],
+            basket: [...state.basket, action.item],
         } 
 
         default:

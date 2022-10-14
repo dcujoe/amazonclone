@@ -6,7 +6,7 @@ import { useStateValue } from './StateProvider';
 
 
 
-const Product = ({ id, title, image, price, rating }) => {
+function Product({ id, title, image, price, rating }) {
     // state is the initial state, dispatch is the action that has to be done
     // The dispatch is a javascript object that performs an action
     const [state, dispatch] = useStateValue();
@@ -15,9 +15,9 @@ const Product = ({ id, title, image, price, rating }) => {
         // dispatch is the javascript object that indicates the action to be done
         dispatch({
             type: "ADD_TO_BASKET",
-            item: { id: id, title: title, image: image, price: price },
-        })
-    }
+            item: { id: id, title: title, image: image, price: price, rating: rating },
+        });
+    };
 
 
     return (
