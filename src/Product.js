@@ -30,11 +30,11 @@ function Product({ id, title, image, price, rating }) {
                 <strong>{price}</strong>
                 </p>
                 <div className="product_rating">
-                    <span role="img" arial-label="rating">
+                    
                 {Array(rating)
                 .fill()
                 .map((_, i) => (<p>⭐️</p>))}
-                   </span>
+                   
                 </div>
             </div>
             <img src={image} 

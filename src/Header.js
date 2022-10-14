@@ -27,7 +27,7 @@ const Header = ({ id, title, image, price }) => {
           <Link to="/" style={{ textDecoration: "none" }}>
         <div className="header_logo">
         <StorefrontIcon className="headerLogo_image" fontSize="large" />
-       <h2 className="header_logoTitle">AmaClon</h2>
+       <h2 className="header_logoTitle">Kode49</h2>
         </div>
           </Link>
         
