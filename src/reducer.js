@@ -14,7 +14,7 @@ export const getBasketTotal = (basket) => {
 
 
 
-// the reducer is immutable
+// the reducer is immutable (it is never changed)
 const reducer = (state, action) => {
     switch(action.type) {
         case "ADD_TO_BASKET":
@@ -24,6 +24,7 @@ const reducer = (state, action) => {
             // adds to the initial state, the basket and action.item
             basket: [...state.basket, action.item],
         } 
+
 
         default:
             return state;
