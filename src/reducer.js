@@ -6,7 +6,7 @@ export const initialState = {
 };
 
 
-// selector function
+// selector function. the total basket and what it contains
 export const getBasketTotal = (basket) => {
     return(basket.reduce((amount, item) => item.price + amount, 0));
 }
