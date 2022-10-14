@@ -6,12 +6,20 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
 import { useStateValue } from './StateProvider';
 
-const Header = () => {
+const Header = ({ id, title, image, price }) => {
   // basket contains product details
 
   const [{basket}, dispatch] = useStateValue();
   // to see the number of items in the basket, use basket.length into the basket section of the
   //header
+
+  const addToBasket = () => {
+    // dispatch is the javascript object that indicates the action to be done
+    dispatch({
+        type: "ADD_TO_BASKET",
+        item: { id: id, title: title, image: image, price: price },
+    })
+}
 
 
     return (
@@ -40,7 +48,7 @@ const Header = () => {
         <Link to="/Checkout" style={{ textDecoration: "none" }}>
         <div className="nav-itemBasket">
         <ShoppingBasketIcon fontSize="large" />
-        <span className="nav_itemLinetwo nav_itemBasketcount">{basket.length}</span>
+        <span className="nav_itemLinetwo nav_itemBasketcount" onClick={addToBasket}>{basket.length}</span>
         </div>
         </Link>
       </div>
