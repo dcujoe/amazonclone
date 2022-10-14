@@ -1,15 +1,12 @@
 import React from 'react';
-import createRoot from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reducer, { initialState } from './reducer';
 import { StateProvider } from './StateProvider';
 
 
-
- ;
 const root = createRoot(document.getElementById('root'));
-
 
 
 root.render(

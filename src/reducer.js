@@ -6,7 +6,17 @@ export const initialState = {
 }
 
 
+
+
+
 // Selector to select the state and make an action to the state provider
+export const getBasketTotal = (basket) => {
+    return (basket?.reduce((amount, item) => item.price + amount, 0));
+}
+
+
+
+
 // the reducer is immutable
 const reducer = (state, action) => {
     switch(action.type) {
@@ -19,6 +29,7 @@ const reducer = (state, action) => {
         } 
 
         default:
+            return state;
     }
 }
 
