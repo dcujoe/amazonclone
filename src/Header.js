@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css'
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-import StorefrontIcon from '@mui/icons-material/Storefront';
+import SellIcon from '@mui/icons-material/Sell';
 import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
 import { useStateValue } from './StateProvider';
@@ -26,7 +26,7 @@ const Header = ({ id, title, image, price }) => {
         <div className="header">
           <Link to="/" style={{ textDecoration: "none" }}>
         <div className="header_logo">
-        <StorefrontIcon className="headerLogo_image" fontSize="large" />
+        <SellIcon className="headerLogo_image" fontSize="large" />
        <h2 className="header_logoTitle">Kode49</h2>
         </div>
           </Link>

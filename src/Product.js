@@ -29,14 +29,15 @@ function Product({ id, title, image, price, rating }) {
                 <small>€</small>
                 <strong>{price}</strong>
                 </p>
+                
                 <div className="product_rating">
-                    
                 {Array(rating)
                 .fill()
                 .map((_, i) => (<p>⭐️</p>))}
                    
                 </div>
             </div>
+            <span className="star-space"></span>
             <img src={image} 
             alt="product_image" />
             <button onClick={addToBasket}>Add to basket</button>
