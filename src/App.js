@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './Home';
 import Checkout from './Checkout';
+import Login from './Login';
 import './App.css';
 import {
   BrowserRouter,
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Checkout" element={<Checkout />} />
+        <Route path="/Login" element={<Login />} />
       </Routes>
     </BrowserRouter>
     </div>

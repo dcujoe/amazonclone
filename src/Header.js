@@ -37,10 +37,12 @@ const Header = ({ id, title, image, price }) => {
         <SearchIcon className="headerSearch_icon" />
       </div>
       <div className="header_nav">
+        <Link to="/login" style={{ textDecoration: "none" }}>
         <div className="nav_item">
         <span className="nav_itemLineone">Hello Guest</span>
         <span className="nav_itemLinetwo">Sign In</span>
         </div>
+        </Link>
         <div className="nav_item">
         <span className="nav_itemLineone">Your</span>
         <span className="nav_itemLinetwo">Shop</span>
