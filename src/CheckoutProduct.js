@@ -39,6 +39,6 @@ const CheckoutProduct = ({ id, image, title, price, rating }) => {
     )
 }
 
-export default CheckoutProduct
+export default CheckoutProduct;
 
 

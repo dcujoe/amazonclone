@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './Login.css'
 import { Link, useNavigate } from "react-router-dom";
-import StorefrontIcon from '@mui/icons-material/Storefront';
-import { auth } from './Firebase';
+import { auth } from './firebase';
+import firebase from 'firebase/compat/app';
+
 
 function Login() {
     const navigate = useNavigate();
@@ -10,14 +11,19 @@ function Login() {
     const [password, setPassword] = useState('');
 
     const signIn = e => {
+        // prevent default refresh when you sign in
         e.preventDefault();
 
-        auth
-            .signInWithEmailAndPassword(email, password)
-            .then(auth => {
+        firebase.auth.signInauth(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                if (user) {
                 navigate.push('/');
+                }
             })
             .catch(error => alert(error.message))
+
+
 
     }
 
@@ -39,13 +45,13 @@ function Login() {
         <div className='login'> 
             <Link to='/' style={{ textDecoration: "none" }}>
                 <div className="login__logo">
-                    <StorefrontIcon className="login__logoImage" fontSize="large" />
-                    <h2 className="login__logoTitle">eSHOP</h2>
+                    
+                    <h2 className="login__logoTitle">kode49</h2>
                 </div>
             </Link>
 
             <div className='login__container'>
-                <h1>Sign-in</h1>
+                <h1 className="signin">Sign-in</h1>
 
                 <form>
                     <h5>E-mail</h5>
