@@ -14,7 +14,7 @@ function Login() {
         // prevent default refresh when you sign in
         e.preventDefault();
 
-        firebase.auth.signIn(auth, email, password)
+        firebase.auth(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
                 if (user) {
