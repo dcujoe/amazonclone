@@ -5,6 +5,52 @@ import { auth } from './firebase';
 import firebase from 'firebase/compat/app';
 
 
+function login() {
+
+    var db = firebase.firestore();
+    var userEmail = document.getElementById("email_field").value;
+    var userPass = document.getElementById("password_field").value;
+  
+    firebase.auth().signInWithEmailAndPassword(userEmail, userPass)
+      .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user;
+  
+        if (!user == '') {
+          sessionStorage.setItem("userEmail", user.email);
+          var sessionEmail = sessionStorage.getItem("userEmail");
+          var params = { action: "session_firebase", sessionEmail: sessionEmail };
+  
+          $.ajax({
+            method: 'POST',
+            url: ajax_url,
+            dataType: 'JSON',
+            data: params,
+            success: function (response) {
+              //var resp = JSON.parse(response);
+              if (response.type == true) {
+                alert(response.resMessage);
+                window.location.replace("http://192.168.1.223/wordpress/dashboard/");
+              } else {
+                alert("Something went wrong..!");
+                return false;
+              }
+            }
+          });
+          return false;
+        }
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        alert(errorMessage);
+      });
+
+
+
+
+
+
 function Login() {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
