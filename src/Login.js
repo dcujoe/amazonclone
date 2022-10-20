@@ -6,72 +6,20 @@ import firebase from 'firebase/compat/app';
 
 
 
-// copied login function
-function login() {
-
-    var db = firebase.firestore();
-    var userEmail = document.getElementById("email_field").value;
-    var userPass = document.getElementById("password_field").value;
-  
-    firebase.auth().signInWithEmailAndPassword(userEmail, userPass)
-      .then((userCredential) => {
-        // Signed in
-        var user = userCredential.user;
-  
-        if (!user == '') {
-          sessionStorage.setItem("userEmail", user.email);
-          var sessionEmail = sessionStorage.getItem("userEmail");
-          var params = { action: "session_firebase", sessionEmail: sessionEmail };
-  
-          $.ajax({
-            method: 'POST',
-            url: ajax_url,
-            dataType: 'JSON',
-            data: params,
-            success: function (response) {
-              //var resp = JSON.parse(response);
-              if (response.type == true) {
-                alert(response.resMessage);
-                window.location.replace("http://192.168.1.223/wordpress/dashboard/");
-              } else {
-                alert("Something went wrong..!");
-                return false;
-              }
-            }
-          });
-          return false;
-        }
-      })
-      .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        alert(errorMessage);
-      });
-
-
-
-    }
-
-
-function Login() {
-    const navigate = useNavigate();
+unction Login() {
+    const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const signIn = e => {
-        // prevent default refresh when you sign in
         e.preventDefault();
 
-        auth(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                if (user) {
-                navigate.push('/');
-                }
+        auth
+            .signInWithEmailAndPassword(email, password)
+            .then(auth => {
+                history.push('/');
             })
             .catch(error => alert(error.message))
-
-
 
     }
 
@@ -82,7 +30,7 @@ function Login() {
             .createUserWithEmailAndPassword(email, password)
             .then((auth) => {
                 if (auth) {
-                    navigate.push('/');
+                    history.push('/');
                 }
             })
             .catch(error => alert(error.message))
@@ -93,13 +41,13 @@ function Login() {
         <div className='login'> 
             <Link to='/' style={{ textDecoration: "none" }}>
                 <div className="login__logo">
-                    
-                    <h2 className="login__logoTitle">kode49</h2>
+                    <StorefrontIcon className="login__logoImage" fontSize="large" />
+                    <h2 className="login__logoTitle">eSHOP</h2>
                 </div>
             </Link>
 
             <div className='login__container'>
-                <h1 className="signin">Sign-in</h1>
+                <h1>Sign-in</h1>
 
                 <form>
                     <h5>E-mail</h5>
@@ -120,6 +68,6 @@ function Login() {
             </div>
         </div>
     )
-
+}
 
 export default Login;
