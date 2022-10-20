@@ -5,6 +5,8 @@ import { auth } from './firebase';
 import firebase from 'firebase/compat/app';
 
 
+
+// copied login function
 function login() {
 
     var db = firebase.firestore();
@@ -48,7 +50,7 @@ function login() {
 
 
 
-
+    }
 
 
 function Login() {
@@ -118,6 +120,6 @@ function Login() {
             </div>
         </div>
     )
-}
+
 
 export default Login;
