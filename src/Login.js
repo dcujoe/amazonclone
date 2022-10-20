@@ -1,23 +1,73 @@
+import { getAuth } from "firebase/auth";
 import React, { useState } from 'react';
 import './Login.css'
 import { Link, useNavigate } from "react-router-dom";
+import { initializeApp } from "firebase/app";
 import { auth } from './firebase';
-import firebase from 'firebase/compat/app';
+import { getFirestore } from 'firebase/firestore/lite';
+import { db } from './firebase';
+import firebase from 'firebase/compat/app';;
 
 
 
-unction Login() {
-    const history = useHistory();
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+    apiKey: "AIzaSyBza4axcxgbiKgH8oO3UAiuyFRcniHXVp8",
+    authDomain: "kode49-1ee52.firebaseapp.com",
+    projectId: "kode49-1ee52",
+    storageBucket: "kode49-1ee52.appspot.com",
+    messagingSenderId: "973845219775",
+    appId: "1:973845219775:web:f65490776580da453e390a",
+    measurementId: "G-V1YGKD8VSM"
+  };
+
+
+  
+ 
+
+  
+
+
+
+
+function Login() {
+    const firebase = initializeApp(firebaseConfig);
+    const auth = getAuth(firebase);
+
+
+
+
+    const firebaseApp = initializeApp(firebaseConfig);
+    db = getFirestore(firebaseApp);
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyBza4axcxgbiKgH8oO3UAiuyFRcniHXVp8",
+        authDomain: "kode49-1ee52.firebaseapp.com",
+        projectId: "kode49-1ee52",
+        storageBucket: "kode49-1ee52.appspot.com",
+        messagingSenderId: "973845219775",
+        appId: "1:973845219775:web:f65490776580da453e390a",
+        measurementId: "G-V1YGKD8VSM"
+      };
+    
+
+
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+  
+
+    
+   
 
     const signIn = e => {
         e.preventDefault();
+        
 
-        auth
+        firebaseApp.auth()
             .signInWithEmailAndPassword(email, password)
             .then(auth => {
-                history.push('/');
+                navigate.push('/');
             })
             .catch(error => alert(error.message))
 
@@ -30,7 +80,7 @@ unction Login() {
             .createUserWithEmailAndPassword(email, password)
             .then((auth) => {
                 if (auth) {
-                    history.push('/');
+                navigate.push('/');
                 }
             })
             .catch(error => alert(error.message))
@@ -41,7 +91,7 @@ unction Login() {
         <div className='login'> 
             <Link to='/' style={{ textDecoration: "none" }}>
                 <div className="login__logo">
-                    <StorefrontIcon className="login__logoImage" fontSize="large" />
+  
                     <h2 className="login__logoTitle">eSHOP</h2>
                 </div>
             </Link>

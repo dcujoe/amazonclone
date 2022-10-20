@@ -1,9 +1,7 @@
 import firebase from 'firebase/compat/app';
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore/lite';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
+import { getAuth } from "firebase/auth";
 
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -27,6 +25,4 @@ const firebaseConfig = {
   
 
   
- 
-
   export { db, auth };
