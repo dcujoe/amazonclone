@@ -17,11 +17,11 @@ function Login() {
      const signIn = (data) => {
         const { email, password } = data;
         return new Promise((resolve, reject) => {
-         firebase.auth().signInWithEmailAndPassword(email, password)
-         .then(auth => {
+         firebase.auth.signInWithEmailAndPassword(email, password)
+         .resolve(auth => {
             navigate.push('/');
         })
-         .catch(reject);
+         .reject(console.error);
         });
        }
 
@@ -29,14 +29,14 @@ function Login() {
        const register = (data) => {
         const { email, password } = data;
         return new Promise((resolve, reject) => {
-         firebase.auth().signInWithEmailAndPassword(email, password)
-         .then(auth => {
+         firebase.auth.signInWithEmailAndPassword(email, password) 
+         .resolve(auth => {
              if (auth) {
                 navigate.push('/');
              }
             
         })
-         .catch(reject);
+         .reject(console.error);
         });
        }
 
