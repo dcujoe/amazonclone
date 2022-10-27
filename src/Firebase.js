@@ -1,4 +1,3 @@
-import firebase from 'firebase/compat/app';
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore/lite';
 import { getAuth } from "firebase/auth";
@@ -25,4 +24,4 @@ const firebaseConfig = {
   
 
   
-  export { db, auth };
+  export { db, auth, firebaseApp };

@@ -1,11 +1,6 @@
-import { getAuth } from "firebase/auth";
 import React, { useState } from 'react';
 import './Login.css'
 import { Link, useNavigate } from "react-router-dom";
-import { initializeApp } from "firebase/app";
-import { auth } from './firebase';
-import { getFirestore } from 'firebase/firestore/lite';
-import { db } from './firebase';
 import firebase from 'firebase/compat/app';;
 
 
@@ -13,6 +8,37 @@ import firebase from 'firebase/compat/app';;
 
 function Login() {
     
+    
+    // functions
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+     const signIn = (data) => {
+        const { email, password } = data;
+        return new Promise((resolve, reject) => {
+         firebase.auth().signInWithEmailAndPassword(email, password)
+         .then(auth => {
+            navigate.push('/');
+        })
+         .catch(reject);
+        });
+       }
+
+
+       const register = (data) => {
+        const { email, password } = data;
+        return new Promise((resolve, reject) => {
+         firebase.auth().signInWithEmailAndPassword(email, password)
+         .then(auth => {
+             if (auth) {
+                navigate.push('/');
+             }
+            
+        })
+         .catch(reject);
+        });
+       }
 
 
 
