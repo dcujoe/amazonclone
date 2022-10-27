@@ -1,6 +1,5 @@
 import React from 'react';
 import './Header.css';
-import SearchIcon from '@mui/icons-material/Search';
 import { Link } from 'react-router-dom';
 import { useStateValue } from './StateProvider';
 
