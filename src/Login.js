@@ -31,61 +31,11 @@ const firebaseConfig = {
 
 
 function Login() {
-    const firebase = initializeApp(firebaseConfig);
-    const auth = getAuth(firebase);
-
-
-
-
-    const firebaseApp = initializeApp(firebaseConfig);
-    db = getFirestore(firebaseApp);
-
-    const firebaseConfig = {
-        apiKey: "AIzaSyBza4axcxgbiKgH8oO3UAiuyFRcniHXVp8",
-        authDomain: "kode49-1ee52.firebaseapp.com",
-        projectId: "kode49-1ee52",
-        storageBucket: "kode49-1ee52.appspot.com",
-        messagingSenderId: "973845219775",
-        appId: "1:973845219775:web:f65490776580da453e390a",
-        measurementId: "G-V1YGKD8VSM"
-      };
     
 
 
-    const navigate = useNavigate();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-  
 
-    
-   
 
-    const signIn = e => {
-        e.preventDefault();
-        
-
-        firebaseApp.auth()
-            .signInWithEmailAndPassword(email, password)
-            .then(auth => {
-                navigate.push('/');
-            })
-            .catch(error => alert(error.message))
-
-    }
-
-    const register = e => {
-        e.preventDefault();
-
-        auth
-            .createUserWithEmailAndPassword(email, password)
-            .then((auth) => {
-                if (auth) {
-                navigate.push('/');
-                }
-            })
-            .catch(error => alert(error.message))
-
-    }
 
     return (
         <div className='login'> 
