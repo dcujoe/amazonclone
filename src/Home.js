@@ -9,7 +9,7 @@ const Home = () => {
             <Header />
             <div className="home">
                 <div className="home_container">
-                    <img src="https://www.x-cart.com/wp-content/uploads/2019/01/ecommerce-768x278.jpg" alt="homeImage" className="home_image" />
+                    <img src="./home2.png" alt="homeImage" className="home_image" />
                   {/* want two products in this row*/}
                     <div className="home_row">
                         <Product 
