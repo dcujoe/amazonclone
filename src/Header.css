@@ -89,7 +89,7 @@
 
 @media (min-width: 480px) {
     .header_logo {
-        size: 1vh;
+        size: 2vh;
     }
     .headerLogo_image {}
     .header_logoTitle {}
