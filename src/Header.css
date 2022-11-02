@@ -81,15 +81,8 @@
     margin-right: 10px;
 }
 
-
-/*Media queries*/
-
-
-/*CSS for medium width screens*/
-
 @media (min-width: 480px) {}
 
-
-}
 @media (min-width: 800px) {}
+
 @media (min-width: 1100px) {}
