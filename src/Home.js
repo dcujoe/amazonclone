@@ -2,6 +2,7 @@ import React from 'react';
 import Product from './Product'
 import Header from './Header';
 import './Home.css';
+import Footer from './Footer';
 
 const Home = () => {
     return (
@@ -57,8 +58,9 @@ const Home = () => {
                         image="https://images-na.ssl-images-amazon.com/images/I/6125mFrzr6L._AC_SX355_.jpg"/>
                     </div>
                 </div>
-
+                
             </div>
+            <Footer />
         </div>
     );
 }
