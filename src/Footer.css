@@ -7,3 +7,12 @@
     bottom: 0;
     z-index: 100;
 }
+
+.footer h2 {
+    font: 300;
+    color: #fff;
+}
+
+.footer a {
+    color: #fff;
+}
