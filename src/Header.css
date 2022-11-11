@@ -12,7 +12,11 @@
     display: flex;
     align-items: center;
     color: rgb(0, 114, 188);
-    margin: 0 25px;
+    margin: 0 30px;
+}
+
+.header_logo svg {
+    margin-right: 10px;
 }
 
 .headerLogo_image {

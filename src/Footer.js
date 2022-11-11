@@ -4,9 +4,11 @@ const Footer = () => {
      
         return (
             <>
-            <div className="back-to-top">Back to top</div>
+            <div className="back-to-top">
+                <a>Back to top</a> 
+            </div>
             <div className="footer">
-                <div className="get to know">
+                <div className="footer-groups ab">
                     <h2>Get to know us</h2>
                     <a>Careers</a>
                     <a>Press Releases</a>
@@ -16,10 +18,10 @@ const Footer = () => {
                     <a>Amazon logisticblog</a>
                     <a>Imprint</a>
                     <a>Amazon Science</a>
-                </div>
-                <div>
+                </div> a
+                <div className="footer-groups ac">
                 <h2>Make money with us</h2>
-                <a>Careers</a>
+                    <a>Careers</a>
                     <a>Sell on Amazon</a>
                     <a>Sell on amazon business</a>
                     <a>Sell on Amazon Handmade</a>
@@ -33,8 +35,19 @@ const Footer = () => {
                     <a>Host an Amazon Hub</a>
                     <a>See More Make Money with Us</a>
                 </div>
-                <div></div>
-                <div></div>
+                <div className="footer-groups ad">
+                <h2>Amazon payment methods</h2>
+                    <a>Shopping with points</a>
+                    <a>Amazon Business Amex Card</a>
+                    <a>credit cards</a>
+                    <a>coupons</a>
+                    <a>Monthly bill</a>
+                    <a>direct debit</a>
+                    <a>Amazon currency converter</a>
+                    <a>Top up my Amazon Account</a>
+                    <a>Top up Amazon locally</a>
+                </div>
+                <div className="footer-groups ae"></div>
             </div>
             </>
         );
