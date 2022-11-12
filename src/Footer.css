@@ -37,7 +37,8 @@
     justify-content: space-evenly;
     flex-wrap: evenly;
     column-gap: 30px;
-    margin-left: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .ab {
