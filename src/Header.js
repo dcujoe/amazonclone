@@ -21,6 +21,7 @@ const Header = ({ id, title, image, price }) => {
 
 
     return (
+      <>
         <div className="header">
           <Link to="/" style={{ textDecoration: "none" }}>
         <div className="header_logo">
@@ -61,6 +62,10 @@ const Header = ({ id, title, image, price }) => {
         </Link>
       </div>
       </div>
+
+      <div className="row-after-header">
+      </div>
+      </>
     );
 }
 
